@@ -8,7 +8,7 @@
 
 常见问题：
 
-[FAQ.md](https://github.com/giantbranch/pwn_deploy_chroot/blob/master/FAQ.md)
+[FAQ.md](https://github.com/wsxk/pwn_deploy_chroot/blob/master/FAQ.md)
 
 详细部署示例：
 

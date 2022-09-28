@@ -46,6 +46,8 @@ pwn程序对应的端口信息也在flags.txt中
 
 2018.09.23 version v2：使用catflag程序代替/bin/sh，这会更加安全
 
+2022.9.28 little change~
+
 ## 参考
 
 https://github.com/Eadom/ctf_xinetd
