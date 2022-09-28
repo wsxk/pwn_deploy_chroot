@@ -37,7 +37,7 @@ XINETD = '''service ctf
 
 DOCKERFILE = '''FROM ubuntu:16.04
 
-RUN sed -i 's/archive.ubuntu.com/asia-east1.gce.archive.ubuntu.com/g' /etc/apt/sources.list && apt update && apt-get install -y lib32z1 xinetd && rm -rf /var/lib/apt/lists/ && rm -rf /root/.cache && apt-get autoclean && rm -rf /tmp/* /var/lib/apt/* /var/cache/* /var/log/*
+RUN sed -i "s@http://.*archive.ubuntu.com@http://mirrors.tuna.tsinghua.edu.cn@g" /etc/apt/sources.list && sed -i "s@http://.*security.ubuntu.com@http://mirrors.tuna.tsinghua.edu.cn@g" /etc/apt/sources.list && apt update && apt-get install -y lib32z1 xinetd && rm -rf /var/lib/apt/lists/ && rm -rf /root/.cache && apt-get autoclean && rm -rf /tmp/* /var/lib/apt/* /var/cache/* /var/log/*
 #apt update && apt-get install -y lib32z1 xinetd && rm -rf /var/lib/apt/lists/ && rm -rf /root/.cache && apt-get autoclean && rm -rf /tmp/* /var/lib/apt/* /var/cache/* /var/log/*
 
 COPY ./'''+ XINETD_CONF_FILENAME +''' /etc/xinetd.d/pwn
@@ -63,10 +63,10 @@ CMD ["/service.sh"]
 
 DOCKERCOMPOSE = '''version: '2'
 services:
- pwn_deploy_chroot:
-   image: pwn_deploy_chroot:latest
+ wsxk_pwn:
+   image: wsxk:pwn
    build: .
-   container_name: pwn_deploy_chroot
+   container_name: wsxk_container
    ports:
     %s
 '''
