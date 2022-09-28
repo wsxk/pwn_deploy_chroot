@@ -4,7 +4,7 @@
 
 中文请点击：
 
-[README_CN.md](https://github.com/giantbranch/pwn_deploy_chroot/blob/master/README_CN.md)
+[README_CN.md](https://github.com/wsxk/pwn_deploy_chroot/blob/master/README_CN.md)
 
 常见问题：
 
